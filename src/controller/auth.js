@@ -40,8 +40,6 @@ module.exports = {
             const token = jwt.sign({result}, 'password123', {algorithm:"HS256", expiresIn: '1h'})
             return helper.response(res, 200, {token, ...result})
         } catch (error) {
-            console.log(error);
-            
             return helper.response(res, 400, {error, message: "Password Invalid"})
         }
     },
